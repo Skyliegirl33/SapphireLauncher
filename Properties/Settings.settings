@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ClientPath" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files (x86)\SquareEnix\FINAL FANTASY XIV - A Realm Reborn\game\ffxiv.exe</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\SquareEnix\FINAL FANTASY XIV - A Realm Reborn\game\ffxiv_dx11.exe</Value>
     </Setting>
     <Setting Name="LaunchParams" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -18,6 +18,12 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="CloseOnLaunch" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AddonList" Type="System.Collections.Generic.List&lt;SapphireBootWPF.Addon.AddonEntry&gt;" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DalamudEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>

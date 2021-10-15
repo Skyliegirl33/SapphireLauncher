@@ -18,10 +18,14 @@ namespace SapphireBootWPF
         {
             try
             {
-                BootClient.StartClient( sid, serverLobbyAddress, serverFrontierAddress );
+                BootClient.StartClientWithAddonAsync( sid, serverLobbyAddress, serverFrontierAddress );
                 if ( Properties.Settings.Default.CloseOnLaunch )
                 {
                     Process.GetCurrentProcess().Kill();
+                } else {
+                    window.Dispatcher.Invoke(() => {
+                        window.Hide();
+                    });
                 }
             }
             catch ( Exception ex )

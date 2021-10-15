@@ -32,6 +32,7 @@ namespace SapphireBootWPF
             expansionLevelComboBox.SelectedIndex = Properties.Settings.Default.ExpansionLevel;
             languageComboBox.SelectedIndex = Properties.Settings.Default.SavedLanguage;
             launcherCloseOnLaunch.IsChecked = Properties.Settings.Default.CloseOnLaunch;
+            launcherDalamudEnabled.IsChecked = Properties.Settings.Default.DalamudEnabled;
         }
 
         private void backButton_Click(object sender, RoutedEventArgs e)
@@ -94,6 +95,7 @@ namespace SapphireBootWPF
             Properties.Settings.Default.ExpansionLevel = expansionLevelComboBox.SelectedIndex;
             Properties.Settings.Default.SavedLanguage = languageComboBox.SelectedIndex;
             Properties.Settings.Default.CloseOnLaunch = launcherCloseOnLaunch.IsChecked.Value;
+            Properties.Settings.Default.DalamudEnabled = launcherDalamudEnabled.IsChecked.Value;
 
             Properties.Settings.Default.Save( );
             Properties.Settings.Default.Reload( );

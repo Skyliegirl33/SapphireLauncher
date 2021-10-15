@@ -12,7 +12,7 @@ namespace SapphireBootWPF.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -25,8 +25,8 @@ namespace SapphireBootWPF.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\SquareEnix\\FINAL FANTASY XIV - A Realm Reborn\\game\\ffxiv.e" +
-            "xe")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files (x86)\\SquareEnix\\FINAL FANTASY XIV - A Realm Reborn\\game\\ffxiv_d" +
+            "x11.exe")]
         public string ClientPath {
             get {
                 return ((string)(this["ClientPath"]));
@@ -93,6 +93,29 @@ namespace SapphireBootWPF.Properties {
             }
             set {
                 this["CloseOnLaunch"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Generic.List<SapphireBootWPF.Addon.AddonEntry> AddonList {
+            get {
+                return ((global::System.Collections.Generic.List<SapphireBootWPF.Addon.AddonEntry>)(this["AddonList"]));
+            }
+            set {
+                this["AddonList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool DalamudEnabled {
+            get {
+                return ((bool)(this["DalamudEnabled"]));
+            }
+            set {
+                this["DalamudEnabled"] = value;
             }
         }
     }

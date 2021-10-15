@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Serilog;
+using System;
 using System.Diagnostics;
 using System.Windows;
 
@@ -13,6 +14,11 @@ namespace SapphireBootWPF
         public MainWindow()
         {
             InitializeComponent( );
+
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Information()
+                .WriteTo.Console()
+                .CreateLogger();
 
             webBrowser.AllowDrop = false;
             webBrowser.RequestHandler = new CefRequestHandler();

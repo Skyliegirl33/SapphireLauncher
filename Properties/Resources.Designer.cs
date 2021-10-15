@@ -19,7 +19,7 @@ namespace SapphireBootWPF.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,7 +61,23 @@ namespace SapphireBootWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to hi.
+        ///   Looks up a localized string similar to &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot;&gt;
+        ///&lt;html id=&quot;de&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;SapphireBootError&lt;/title&gt;
+        ///    &lt;style&gt;
+        ///        body {
+        ///            font-family: &quot;MS Gothic&quot;, Times, serif;
+        ///            background: #fff;
+        ///        }
+        ///        .error {
+        ///            padding-top: 75px;
+        ///            font-family: monospace;
+        ///        }
+        ///    &lt;/style&gt;
+        ///&lt;/head&gt;
+        ///&lt;body id=&quot;info&quot; class=&quot;win&quot; oncontextmenu=&quot;return false;&quot;&gt;
+        ///    SapphireBoot could not connect to the server you set up, or no server was se [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string server {
             get {

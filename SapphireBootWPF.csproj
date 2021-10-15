@@ -11,12 +11,13 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SapphireBootWPF</RootNamespace>
     <AssemblyName>SapphireBootWPF</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
+    <LangVersion>8.0</LangVersion>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -79,12 +80,36 @@
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.1.0.2556, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>packages\MaterialDesignThemes.4.1.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Windows.Shell, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Windows.Shell.3.0.1.0\lib\net40\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>packages\Serilog.2.10.0\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.Console, Version=4.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>packages\Serilog.Sinks.Console.4.0.0\lib\net45\Serilog.Sinks.Console.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -105,11 +130,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Addon\AddonEntry.cs" />
+    <Compile Include="Addon\AddonManager.cs" />
+    <Compile Include="Addon\Implementations\GenericAddon.cs" />
+    <Compile Include="Addon\INotifyAddonAfterClose.cs" />
+    <Compile Include="Addon\IPersistentAddon.cs" />
+    <Compile Include="Addon\IRunnableAddon.cs" />
     <Compile Include="CefLoadHandler.cs" />
     <Compile Include="CefRequestHandler.cs" />
+    <Compile Include="Addon\IAddon.cs" />
+    <Compile Include="ClientLanguage.cs" />
+    <Compile Include="Dalamud\AssetManager.cs" />
+    <Compile Include="Dalamud\DalamudLauncher.cs" />
+    <Compile Include="Dalamud\DalamudStartInfo.cs" />
+    <Compile Include="Dalamud\DalamudUpdater.cs" />
+    <Compile Include="Dalamud\DalamudVersionInfo.cs" />
+    <Compile Include="NativeAclFix.cs" />
+    <Compile Include="Paths.cs" />
+    <Compile Include="Repo.cs" />
     <Compile Include="ServerWindow.xaml.cs">
       <DependentUpon>ServerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings\DalamudSettings.cs" />
+    <Compile Include="Util.cs" />
     <Compile Include="WebScriptApi.cs" />
     <Page Include="Control\CaptionButtons.xaml">
       <SubType>Designer</SubType>
@@ -240,10 +283,12 @@
     <Error Condition="!Exists('packages\CefSharp.Common.57.0.0\build\CefSharp.Common.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Common.57.0.0\build\CefSharp.Common.targets'))" />
     <Error Condition="!Exists('packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.props'))" />
     <Error Condition="!Exists('packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.targets'))" />
+    <Error Condition="!Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets'))" />
   </Target>
   <Import Project="packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets" Condition="Exists('packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets')" />
   <Import Project="packages\CefSharp.Common.57.0.0\build\CefSharp.Common.targets" Condition="Exists('packages\CefSharp.Common.57.0.0\build\CefSharp.Common.targets')" />
   <Import Project="packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.targets" Condition="Exists('packages\CefSharp.Wpf.57.0.0\build\CefSharp.Wpf.targets')" />
+  <Import Project="packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.1.0\build\MaterialDesignThemes.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
